@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovementTest : MonoBehaviour
 {
     private const float SPEED = 20.0f;
+    private const float BULLETSPEED = 40.0f;
     private const int DEFAULTHEALTH = 100;
     private const int DEFAULTGUNPOWER = 15;
 
@@ -14,11 +15,9 @@ public class PlayerMovementTest : MonoBehaviour
     private int heals;
     private int powerups;
 
-    [SerializeField] 
-    private PlayerMovementTest enemy;
-
-    [SerializeField]
-    private Transform respawnPosition;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform respawnPosition;
 
     public int Health
     {
@@ -65,9 +64,10 @@ public class PlayerMovementTest : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+
         if (Input.GetKeyDown(KeyCode.V))
         {
-            dealDamage(40);
+            Shoot();
         }
 
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
@@ -75,11 +75,13 @@ public class PlayerMovementTest : MonoBehaviour
         transform.position += movement * SPEED * Time.deltaTime;
 
         //IF WIN
-        //if (enemy.Health <= 0)
+        //if (enemy.GetComponent<PlayerMovementTest>().Health <= 0)
         //{
         //    Wins += 1;
         //    ResetNPC();
         //}
+
+
     }
 
     void ResetNPC()
@@ -107,5 +109,12 @@ public class PlayerMovementTest : MonoBehaviour
         {
             ResetNPC();
         }
+    }
+
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        bullet.GetComponent<Bullet>().Init(GunPower, enemy);
+        bullet.GetComponent<Rigidbody>().velocity = (enemy.transform.position - transform.position).normalized * BULLETSPEED;
     }
 }

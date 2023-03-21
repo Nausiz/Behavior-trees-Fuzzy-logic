@@ -292,6 +292,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1921245739570543041, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: m_text
+      value: NPC FL
+      objectReference: {fileID: 0}
     - target: {fileID: 5162105325062778712, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -340,8 +344,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 9008131693695510843, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: m_text
+      value: NPC FL
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+--- !u!114 &1166043287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+  m_PrefabInstance: {fileID: 1166043286}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d315b8734fc073949a75c5d5f2eca613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1842012421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +368,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24889028693879387, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+      propertyPath: sceneMenu
+      value: 
+      objectReference: {fileID: 1166043287}
+    - target: {fileID: 2475184344024140637, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+      propertyPath: sceneMenu
+      value: 
+      objectReference: {fileID: 1166043287}
+    - target: {fileID: 5275592841699719532, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+      propertyPath: sceneMenu
+      value: 
+      objectReference: {fileID: 1166043287}
+    - target: {fileID: 5342331153215302070, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+      propertyPath: sceneMenu
+      value: 
+      objectReference: {fileID: 1166043287}
     - target: {fileID: 6405025217185153334, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
       propertyPath: m_RootOrder
       value: 4
