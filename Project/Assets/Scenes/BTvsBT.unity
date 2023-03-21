@@ -285,6 +285,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1460844699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6060685874693607639, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1937996114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -553,9 +558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31fcc27be94a6d4f8980a558900b346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  hp: 80
-  gunpower: 5
+  health: 100
+  enemy: {fileID: 0}
+  respawnPosition: {fileID: 1460844699}
 --- !u!1001 &5162105323738915043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -607,6 +612,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: npc1
+      value: 
+      objectReference: {fileID: 2018163419}
     - target: {fileID: 5162105325062778714, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
       propertyPath: m_Name
       value: SceneMenu

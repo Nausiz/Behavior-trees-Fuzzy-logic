@@ -2379,6 +2379,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonBack: {fileID: 5162105323377827465}
   buttonReset: {fileID: 5162105325278372842}
+  textRounds: {fileID: 7406456997164070968}
+  textTime: {fileID: 5854659987942419106}
+  textWinsNPC1: {fileID: 6991466811895698026}
+  textPowerUpsNPC1: {fileID: 3545146896076316190}
+  textHealsNPC1: {fileID: 5299493307330150361}
+  textWinsNPC2: {fileID: 805017227037383331}
+  textPowerUpsNPC2: {fileID: 7306383637924847208}
+  textHealsNPC2: {fileID: 2107217759559373156}
+  npc1: {fileID: 0}
+  npc2: {fileID: 0}
 --- !u!1 &5162105325278372843
 GameObject:
   m_ObjectHideFlags: 0
