@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject == Target)
         {
-            Target.GetComponent<PlayerMovementTest>().dealDamage(Damage);
+            Target.GetComponent<NPC>().TakeDamage(Damage);
         }
     }
 }

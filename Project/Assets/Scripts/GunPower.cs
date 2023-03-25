@@ -15,8 +15,8 @@ public class GunPower : MonoBehaviour
     {
         if (other.gameObject.tag == "NPC")
         {
-            other.gameObject.GetComponent<PlayerMovementTest>().GunPower += GUNPOWER;
-            other.gameObject.GetComponent<PlayerMovementTest>().PowerUps += 1;
+            other.gameObject.GetComponent<NPC>().GunPower += GUNPOWER;
+            other.gameObject.GetComponent<NPC>().PowerUps += 1;
             gameObject.SetActive(false);
         }
     }

@@ -15,8 +15,8 @@ public class Heal : MonoBehaviour
     {
         if (other.gameObject.tag == "NPC")
         {
-            other.gameObject.GetComponent<PlayerMovementTest>().AddHealth(HEAL);
-            other.gameObject.GetComponent<PlayerMovementTest>().Heals += 1;
+            other.gameObject.GetComponent<NPC>().AddHealth(HEAL);
+            other.gameObject.GetComponent<NPC>().Heals += 1;
             gameObject.SetActive(false);
         }
     }

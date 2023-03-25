@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/FLvsFL.unity
+- path: Assets/Scenes/BTvsBT.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
