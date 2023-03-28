@@ -51,10 +51,11 @@ public class SceneMenu : MonoBehaviour
         textTime.text = string.Format("{0}:{1}", minutes, seconds);
 
         //Rounds
-        //if ((npc1.Wins + npc2.Wins).ToString() != textRounds.text)
-        //    {
-        //         textRounds.text = (npc1.Wins + npc2.Wins).ToString();
-        //         RoundEnded?.Invoke();
+        if ((npc1.Wins + npc2.Wins + 1).ToString() != textRounds.text)
+        {
+            textRounds.text = (npc1.Wins + npc2.Wins + 1).ToString();
+            RoundEnded?.Invoke();
+        }
 
         //NPC1
         if (npc1.Wins.ToString()!= textWinsNPC1.text)
@@ -65,12 +66,12 @@ public class SceneMenu : MonoBehaviour
             textHealsNPC1.text = npc1.Heals.ToString();
 
         //NPC2
-        //if (npc2.Wins.ToString() != textWinsNPC2.text)
-        //    textWinsNPC2.text = npc2.Wins.ToString();
-        //if (npc2.PowerUps.ToString() != textPowerUpsNPC2.text)
-        //    textPowerUpsNPC2.text = npc2.PowerUps.ToString();
-        //if (npc2.Heals.ToString() != textHealsNPC2.text)
-        //    textHealsNPC2.text = npc2.Heals.ToString();
+        if (npc2.Wins.ToString() != textWinsNPC2.text)
+            textWinsNPC2.text = npc2.Wins.ToString();
+        if (npc2.PowerUps.ToString() != textPowerUpsNPC2.text)
+            textPowerUpsNPC2.text = npc2.PowerUps.ToString();
+        if (npc2.Heals.ToString() != textHealsNPC2.text)
+            textHealsNPC2.text = npc2.Heals.ToString();
     }
 
     void OnClickBack()

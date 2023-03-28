@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
-    protected const float SPEED = 5f;
-    protected const float ACCELERATION = 8f;
-    protected const float SHOOT_DELAY = 0.5f;
+    protected const float SPEED = 12f;
+    protected const float ACCELERATION = 55f;
+    protected const float SHOOT_DELAY = 0.75f;
     protected const int DEFAULT_HEALTH = 100;
-    private const float BULLET_SPEED = 35.0f;
+    protected const int RANGE_ATTACK = 10;
+    protected const int RANGE_HEAL = 5;
+    protected const int RANGE_POWERUPS = 2;
+    private const float BULLET_SPEED = 30.0f;
     private const int DEFAULT_GUNPOWER = 15;
 
     private int health;
@@ -59,14 +60,14 @@ public class NPC : MonoBehaviour
         set => powerups = value;
     }
 
+
     public float ShootTimer
     {
         get => shootTimer;
         set => shootTimer = value;
     }
 
-
-    void Start()
+    void Awake()
     {
         Health = DEFAULT_HEALTH;
         GunPower = DEFAULT_GUNPOWER;
@@ -81,10 +82,10 @@ public class NPC : MonoBehaviour
         agent.acceleration = ACCELERATION;
     }
 
-    void ResetNPC()
+    public void ResetNPC()
     {
-        gameObject.transform.position = respawnPosition.position;
-        gameObject.transform.rotation = respawnPosition.rotation;
+        agent.gameObject.transform.position = respawnPosition.transform.position;
+        agent.gameObject.transform.rotation = respawnPosition.transform.rotation;
 
         Health = DEFAULT_HEALTH;
         GunPower = DEFAULT_GUNPOWER;
@@ -105,6 +106,8 @@ public class NPC : MonoBehaviour
         if (Health <= 0)
         {
             ResetNPC();
+            enemy.GetComponent<NPC>().ResetNPC();
+            enemy.GetComponent<NPC>().Wins+=1;
         }
     }
 
@@ -182,5 +185,30 @@ public class NPC : MonoBehaviour
         }
 
         return nearestGunPowerPack;
+    }
+
+    protected GameObject FindNearestObject(GameObject object1, GameObject object2)
+    {
+        if (object1 == null)
+            return object2;
+        else if (object2 == null)
+            return object1;
+
+
+        if (Vector3.Distance(transform.position, object1.transform.position) <=
+            Vector3.Distance(transform.position, object2.transform.position))
+            return object1;
+        else
+            return object2;
+    }
+
+    private void DestroyAllBullets()
+    {
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+
+        for(int i = bullets.Length-1; i >= 0; i--)
+        {
+            Destroy(bullets[i]);
+        }
     }
 }

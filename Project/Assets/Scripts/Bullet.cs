@@ -23,15 +23,17 @@ public class Bullet : MonoBehaviour
         this.target = target;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Environment")
+        if (other.gameObject.tag == "Environment")
         {
             Destroy(gameObject);
         }
-        else if (collision.gameObject == Target)
+        else if (other.gameObject == Target)
         {
+            Destroy(gameObject);
             Target.GetComponent<NPC>().TakeDamage(Damage);
         }
+        
     }
 }

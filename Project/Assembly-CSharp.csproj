@@ -57,19 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\SceneMenu.cs" />
+    <Compile Include="Assets\Scripts\AI\NPCBehaviorTree.cs" />
     <Compile Include="Assets\Scripts\AI\NPC.cs" />
     <Compile Include="Assets\Scripts\Heal.cs" />
     <Compile Include="Assets\Scripts\UI\Menu.cs" />
+    <Compile Include="Assets\Scripts\AI\NPCFuzzyLogic.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\GunPower.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\NPCBehaviorTree.cs" />
-    <Compile Include="Assets\Scripts\AI\NPCFuzzyLogic.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\BehaviorTree.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\SequenceNode.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\ActionNode.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\ConditionNode.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\Node.cs" />
-    <Compile Include="Assets\Scripts\AI\BehaviorTree\SelectiorNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
