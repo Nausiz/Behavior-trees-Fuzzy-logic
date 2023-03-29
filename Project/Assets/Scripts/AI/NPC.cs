@@ -8,7 +8,6 @@ public class NPC : MonoBehaviour
     protected const float SHOOT_DELAY = 0.75f;
     protected const int DEFAULT_HEALTH = 100;
     protected const int RANGE_ATTACK = 10;
-    protected const int RANGE_HEAL = 5;
     protected const int RANGE_POWERUPS = 2;
     private const float BULLET_SPEED = 30.0f;
     private const int DEFAULT_GUNPOWER = 15;
@@ -210,5 +209,25 @@ public class NPC : MonoBehaviour
         {
             Destroy(bullets[i]);
         }
+    }
+
+    protected void UseHeal()
+    {
+        agent.stoppingDistance = RANGE_POWERUPS;
+        agent.SetDestination(FindNearestHealthPack().transform.position);
+    }
+
+    protected void UseGunPower()
+    {
+        agent.stoppingDistance = RANGE_POWERUPS;
+        agent.SetDestination(FindNearestGunPowerPack().transform.position);
+    }
+
+    protected void Attack()
+    {
+        agent.stoppingDistance = RANGE_ATTACK;
+        transform.rotation = Quaternion.LookRotation(enemy.transform.position - transform.position, Vector3.up);
+        ShootIfPossible();
+        agent.SetDestination(enemy.transform.position);
     }
 }
