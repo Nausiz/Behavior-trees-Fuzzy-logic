@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class SceneMenu : MonoBehaviour
 {
@@ -22,9 +23,13 @@ public class SceneMenu : MonoBehaviour
     [SerializeField] private NPC npc1;
     [SerializeField] private NPC npc2;
 
-    private float timer;
+    [SerializeField] private GameObject[] healsPacksNPC1;
+    [SerializeField] private GameObject[] healsPacksNPC2;
+    
+    [SerializeField] private GameObject[] gunPowersPacksNPC1;
+    [SerializeField] private GameObject[] gunPowersPacksNPC2;
 
-    public event Action RoundEnded;
+    private float timer;
 
 
     // Start is called before the first frame update
@@ -38,6 +43,8 @@ public class SceneMenu : MonoBehaviour
 
         textRounds.text = "0";
         textTime.text = "00:00";
+
+        ResetPowerUps();
     }
 
     void Update()
@@ -54,7 +61,7 @@ public class SceneMenu : MonoBehaviour
         if ((npc1.Wins + npc2.Wins + 1).ToString() != textRounds.text)
         {
             textRounds.text = (npc1.Wins + npc2.Wins + 1).ToString();
-            RoundEnded?.Invoke();
+            ResetPowerUps();
         }
 
         //NPC1
@@ -82,5 +89,54 @@ public class SceneMenu : MonoBehaviour
     void OnClickReset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    void ResetHealsPacks(GameObject[] healsPacks)
+    {
+        foreach (GameObject healPack in healsPacks)
+        {
+            healPack.SetActive(false);
+        }
+
+
+        int firstRandomPackIndex = Random.Range(0, healsPacks.Length);
+        healsPacks[firstRandomPackIndex].SetActive(true);
+
+        int secondRandomPackIndex;
+        do
+        {
+            secondRandomPackIndex = Random.Range(0, healsPacks.Length);
+
+        } while (firstRandomPackIndex == secondRandomPackIndex);
+        healsPacks[secondRandomPackIndex].SetActive(true);
+    }
+
+    void ResetGunPowersPacks(GameObject[] gunPowersPacks)
+    {
+        foreach (GameObject gunPowerPack in gunPowersPacks)
+        {
+            gunPowerPack.SetActive(false);
+        }
+
+
+        int firstRandomPackIndex = Random.Range(0, gunPowersPacks.Length);
+        gunPowersPacks[firstRandomPackIndex].SetActive(true);
+
+        int secondRandomPackIndex;
+        do
+        {
+            secondRandomPackIndex = Random.Range(0, gunPowersPacks.Length);
+
+        } while (firstRandomPackIndex == secondRandomPackIndex);
+        gunPowersPacks[secondRandomPackIndex].SetActive(true);
+    }
+
+    void ResetPowerUps()
+    {
+        ResetHealsPacks(healsPacksNPC1);
+        ResetHealsPacks(healsPacksNPC2);
+
+        ResetGunPowersPacks(gunPowersPacksNPC1);
+        ResetGunPowersPacks(gunPowersPacksNPC2);
     }
 }

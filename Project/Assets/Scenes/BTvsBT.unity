@@ -581,6 +581,66 @@ PrefabInstance:
       objectReference: {fileID: 5162105323738915044}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+--- !u!1 &1937996115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1550882213439396461, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2560428502631290578, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4385426972933399026, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1134236026891462998, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8948841214728823178, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1426800034641786332, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1947345497207562219, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7247626322372229407, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 836973324939765480, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4995005465670849996, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4716609789502730301, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1937996126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4868004860576011797, guid: 31c6d542040a2e541a364b1f1d74d254, type: 3}
+  m_PrefabInstance: {fileID: 1937996114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1941712053
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +873,70 @@ PrefabInstance:
       propertyPath: npc2
       value: 
       objectReference: {fileID: 1399371226}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC2.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC1.Array.data[0]
+      value: 
+      objectReference: {fileID: 1937996126}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC1.Array.data[1]
+      value: 
+      objectReference: {fileID: 1937996125}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC1.Array.data[2]
+      value: 
+      objectReference: {fileID: 1937996124}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC2.Array.data[0]
+      value: 
+      objectReference: {fileID: 1937996123}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC2.Array.data[1]
+      value: 
+      objectReference: {fileID: 1937996122}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: healsPacksNPC2.Array.data[2]
+      value: 
+      objectReference: {fileID: 1937996121}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC2.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC1.Array.data[0]
+      value: 
+      objectReference: {fileID: 1937996120}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC1.Array.data[1]
+      value: 
+      objectReference: {fileID: 1937996119}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC1.Array.data[2]
+      value: 
+      objectReference: {fileID: 1937996118}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC2.Array.data[0]
+      value: 
+      objectReference: {fileID: 1937996117}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC2.Array.data[1]
+      value: 
+      objectReference: {fileID: 1937996116}
+    - target: {fileID: 5162105325062778713, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
+      propertyPath: gunPowersPacksNPC2.Array.data[2]
+      value: 
+      objectReference: {fileID: 1937996115}
     - target: {fileID: 5162105325062778714, guid: 44be7d01a82273a4a9114de1ef7f78dc, type: 3}
       propertyPath: m_Name
       value: SceneMenu

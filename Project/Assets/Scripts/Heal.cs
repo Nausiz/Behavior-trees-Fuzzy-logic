@@ -4,13 +4,6 @@ public class Heal : MonoBehaviour
 {
     private const int HEAL = 25;
 
-    [SerializeField] private SceneMenu sceneMenu;
-
-    void Start()
-    {
-        sceneMenu.RoundEnded += OnRoundEnd;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "NPC")
@@ -19,15 +12,5 @@ public class Heal : MonoBehaviour
             other.gameObject.GetComponent<NPC>().Heals += 1;
             gameObject.SetActive(false);
         }
-    }
-
-    private void OnRoundEnd()
-    {
-        gameObject.SetActive(true);
-    }
-
-    void OnDestroy()
-    {
-        sceneMenu.RoundEnded -= OnRoundEnd;
     }
 }
