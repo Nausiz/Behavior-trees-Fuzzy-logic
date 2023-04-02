@@ -83,8 +83,10 @@ public class NPC : MonoBehaviour
 
     public void ResetNPC()
     {
+        agent.enabled = false;
         agent.gameObject.transform.position = respawnPosition.transform.position;
         agent.gameObject.transform.rotation = respawnPosition.transform.rotation;
+        agent.enabled = true;
 
         Health = DEFAULT_HEALTH;
         GunPower = DEFAULT_GUNPOWER;
