@@ -116,10 +116,10 @@ public class NPC : MonoBehaviour
     {
         if (CanSeeTarget())
         {
-            if (Time.time > shootTimer)
+            if (Time.time > ShootTimer)
             {
                 Shoot();
-                shootTimer = Time.time + SHOOT_DELAY;
+                ShootTimer = Time.time + SHOOT_DELAY;
             }
         }
     }

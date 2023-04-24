@@ -45,13 +45,13 @@ public class NPCFuzzyLogic : NPC
         float distanceToEnemy = Vector3.Distance(gameObject.transform.position, enemy.transform.position);
 
         float closeDistanceValue = 0.0f;
-        if (distanceToEnemy >= CLOSE_CAN_USE_HEAL_DISTANCE_THRESHOLD)
+        if (distanceToEnemy >= FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD)
         {
             closeDistanceValue = 1.0f;
         }
-        else if (distanceToEnemy > FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD)
+        else if (distanceToEnemy < FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD && distanceToEnemy >= CLOSE_CAN_USE_HEAL_DISTANCE_THRESHOLD)
         {
-            closeDistanceValue = (FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD - distanceToEnemy) / (FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD - CLOSE_CAN_USE_HEAL_DISTANCE_THRESHOLD);
+            closeDistanceValue = 1 - (FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD - distanceToEnemy) / (FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD - CLOSE_CAN_USE_HEAL_DISTANCE_THRESHOLD);
         }
 
         float canUseHealValue = Mathf.Min(lowHealthValue, closeDistanceValue);
@@ -67,13 +67,13 @@ public class NPCFuzzyLogic : NPC
         float distanceToEnemy = Vector3.Distance(gameObject.transform.position, enemy.transform.position);
 
         float closeEnemyValue = 0.0f;
-        if (distanceToEnemy <= CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD)
+        if (distanceToEnemy >= FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD)
         {
             closeEnemyValue = 1.0f;
         }
-        else if (distanceToEnemy > CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD && distanceToEnemy < FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD)
+        else if (distanceToEnemy < FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD && distanceToEnemy >= CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD)
         {
-            closeEnemyValue = (FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD - distanceToEnemy) / (FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD - CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD);
+            closeEnemyValue = 1 - (FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD - distanceToEnemy) / (FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD - CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD);
         }
 
         float distanceToGunPower = Vector3.Distance(gameObject.transform.position, FindNearestGunPowerPack().transform.position);
@@ -83,7 +83,7 @@ public class NPCFuzzyLogic : NPC
         {
             closeGunPowerValue = 1.0f;
         }
-        else if (distanceToGunPower > CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD && distanceToGunPower < FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD)
+        else if (distanceToGunPower > CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD && distanceToGunPower <= FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD)
         {
             closeGunPowerValue = (FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD - distanceToGunPower) / (FAR_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD - CLOSE_CAN_USE_GUNPOWER_DISTANCE_THRESHOLD);
         }

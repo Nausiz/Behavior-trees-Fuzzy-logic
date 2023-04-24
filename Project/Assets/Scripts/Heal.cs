@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
-    private const int HEAL = 25;
+    private const int HEAL = 50;
 
     private void OnTriggerEnter(Collider other)
     {
