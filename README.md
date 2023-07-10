@@ -17,6 +17,7 @@ The presented graphic also shows the data that is collected during duels:
 * Wins - the number of won rounds of a given NPC,
 * Buffs - the number of buffs collected for a given NPC over all rounds,
 * Healing - the number of health kits collected by a given NPC over all rounds.
+
 The project also uses the NPC class, which contains all the necessary parameters and methods for NPCs to move, shoot and make decisions. Both algorithms (fuzzy logic and behavior trees) inherit from the NPC class, which allows you to compare their results.
 All of these design elements have been implemented to collect data on duels between NPCs. These data will then be used in the experimental part of the project.
 
@@ -44,6 +45,7 @@ The second approach to implementing artificial intelligence for NPCs in the proj
 In the presented code, the values of belonging [0-1] to the data sets: "CalculateCanUseGunPowerValue" and "CalculateCanUseHealValue" are compared. To proceed to the action, the set must also have a value greater than the "ATTACK_THRESHOLD" parameter, which in this case is 0.2. The method of calculating the value of belonging to the set responsible for using the first aid kit takes into account such factors as the NPC's current health and distance from the enemy. Both factors have two thresholds, their values given in the project are given in parentheses:
 * Health status: LOW_HEALTH_THRESHOLD (25), MID_HEALTH_THRESHOLD (50);
 * Distance to enemy: CLOSE_CAN_USE_HEAL_DISTANCE_THRESHOLD (5), FAR_CAN_USE_HEAL_DISTANCE_THRESHOLD (10).
+
 The graphical visualization responsible for this part of the fuzzy logic is shown in figure 5
 
 *Figure 5. Visualization of the value of belonging to the set responsible for using the first aid kit.*
